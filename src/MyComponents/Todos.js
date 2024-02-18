@@ -2,12 +2,16 @@ import React from "react";
 import TodoItem from "./TodoItem";
 
 export default function Todos(props) {
+  let mystyle={
+    minHeight:"70vh"
+  }
   return (
     <>
-      <div className="container">
+      <div className="container" style={mystyle}>
         <h3>Todos List</h3>
-        {props.todos.map((todo) => 
-            <TodoItem todo={todo}></TodoItem>
+        {props.todos?.length===0?"No todos to display":
+        props.todos?.map((todo) => 
+            <TodoItem todo={todo} key={todo.sno} onDelete={props.onDelete}></TodoItem>
         )}
       </div>
     </>
