@@ -7,7 +7,7 @@ export default function TodoItem(props) {
       <div className="card-body">
         <h5 className="card-title">{props.todo.title}</h5>
         <p className="card-text">{props.todo.des}</p>
-       <button className="btn btn-danger">delete</button>
+       <button className="btn btn-danger" onClick={()=>{props.onDelete(props.todo)}}>delete</button>
       </div>
     </div>
   );
